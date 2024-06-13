@@ -3,6 +3,7 @@ package org.example;
 import org.example.datastructure.LinkedList;
 import org.example.datastructure.Queue;
 import org.example.datastructure.Stack;
+import org.example.datastructure.Tree;
 
 import java.util.Arrays;
 
@@ -39,27 +40,41 @@ public class Main {
 //        int[] numeros = {5,4,3,2,1};
 //        inverter(numeros);
 
-        Queue queue = new Queue(1);
+//        Queue queue = new Queue(1);
+//
+//        queue.getFirst();
+//        queue.getLast();
+//        queue.getLength();
+//        queue.print();
+//
+//        queue.enqueue(2);
+//        queue.enqueue(7);
+//
+//        queue.getFirst();
+//        queue.getLast();
+//        queue.getLength();
+//        queue.print();
+//
+//        queue.dequeue();
+//
+//        queue.getFirst();
+//        queue.getLast();
+//        queue.getLength();
+//        queue.print();
 
-        queue.getFirst();
-        queue.getLast();
-        queue.getLength();
-        queue.print();
+        Tree tree = new Tree();
+        tree.insert(37);
+        tree.insert(11);
+        tree.insert(66);
 
-        queue.enqueue(2);
-        queue.enqueue(7);
+        tree.insert(8);
+        tree.insert(17);
+        tree.insert(42);
 
-        queue.getFirst();
-        queue.getLast();
-        queue.getLength();
-        queue.print();
+        tree.insert(72);
 
-        queue.dequeue();
 
-        queue.getFirst();
-        queue.getLast();
-        queue.getLength();
-        queue.print();
+        tree.breadthFirstSearch();
 
     }
 

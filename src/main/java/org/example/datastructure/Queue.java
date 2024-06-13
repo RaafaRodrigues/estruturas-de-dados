@@ -1,5 +1,7 @@
 package org.example.datastructure;
 
+import org.example.datastructure.nodes.Node;
+
 import java.util.Objects;
 
 public class Queue {
@@ -19,8 +21,8 @@ public class Queue {
 
     public Integer getFirst() {
         if (Objects.nonNull(this.first)) {
-            System.out.println("First :" + this.first.data);
-            return this.first.data;
+            System.out.println("First :" + this.first.getData());
+            return this.first.getData();
         }
         System.out.println("Fila está vazia");
         return null;
@@ -28,8 +30,8 @@ public class Queue {
 
     public Integer getLast() {
         if (Objects.nonNull(this.last)) {
-            System.out.println("Last :" + this.last.data);
-            return this.last.data;
+            System.out.println("Last :" + this.last.getData());
+            return this.last.getData();
         }
         System.out.println("Fila está vazia");
         return null;
@@ -44,8 +46,8 @@ public class Queue {
         Node<Integer> navigator = this.first;
         System.out.println("#########################");
         while (navigator != null){
-            System.out.println(navigator.data);
-            navigator = navigator.next;
+            System.out.println(navigator.getData());
+            navigator = navigator.getNext();
         }
         System.out.println("#########################");
     }
@@ -57,7 +59,7 @@ public class Queue {
             this.first = newNode;
             this.last = newNode;
         } else {
-            this.last.next = newNode;
+            this.last.setNext(newNode);
             this.last = newNode;
         }
         this.length++;
@@ -75,8 +77,8 @@ public class Queue {
            return remove;
        }
 
-       this.first = this.first.next;
-       remove.next = null;
+       this.first = this.first.getNext();
+       remove.setNext(null);
        this.length--;
        return remove;
     }

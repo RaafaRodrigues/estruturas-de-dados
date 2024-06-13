@@ -1,6 +1,8 @@
 package org.example.datastructure;
 
 
+import org.example.datastructure.nodes.Node;
+
 import java.util.Objects;
 
 public class LinkedList {
@@ -24,7 +26,7 @@ public class LinkedList {
         if (this.head == null) {
             printEmptyListInformation();
         } else {
-            System.out.println("Head : " + this.head.data);
+            System.out.println("Head : " + this.head.getData());
         }
     }
 
@@ -32,7 +34,7 @@ public class LinkedList {
         if (this.tail == null) {
             printEmptyListInformation();
         } else {
-            System.out.println("Tail: " + this.tail.data);
+            System.out.println("Tail: " + this.tail.getData());
         }
     }
 
@@ -52,8 +54,8 @@ public class LinkedList {
         Node<String> temp = this.head;
 
         while (temp != null) {
-            System.out.println(temp.data);
-            temp = temp.next;
+            System.out.println(temp.getData());
+            temp = temp.getNext();
         }
     }
 
@@ -63,7 +65,7 @@ public class LinkedList {
             this.head = newNode;
             this.tail = newNode;
         } else {
-            this.tail.next = newNode;
+            this.tail.setNext(newNode);
             this.tail = newNode;
         }
         this.length++;
@@ -76,13 +78,13 @@ public class LinkedList {
         }
         Node<String> navigator = this.head;
         Node<String> removed;
-        while (navigator.next != this.tail) {
-            navigator = navigator.next;
+        while (navigator.getNext() != this.tail) {
+            navigator = navigator.getNext();
         }
 
         removed = this.tail;
         this.tail = navigator;
-        this.tail.next = null;
+        this.tail.setNext(null);
         this.length--;
 
         validateEmpty();
@@ -96,7 +98,7 @@ public class LinkedList {
             this.head = newNode;
             this.tail = newNode;
         } else {
-            newNode.next = this.head;
+            newNode.setNext(this.head);
             this.head = newNode;
         }
         this.length++;
@@ -109,8 +111,8 @@ public class LinkedList {
         }
 
         Node<String> removed = this.head;
-        this.head = this.head.next;
-        removed.next = null;
+        this.head = this.head.getNext();
+        removed.setNext(null);
         this.length--;
 
         validateEmpty();
@@ -133,7 +135,7 @@ public class LinkedList {
         Node<String> navigator = this.head;
 
         for (int i = 0; i < index; i++) {
-            navigator = navigator.next;
+            navigator = navigator.getNext();
         }
 
         return navigator;
@@ -156,8 +158,8 @@ public class LinkedList {
 
         Node<String> newNode = new Node<>(data);
         Node<String> temp = this.get(index -1);
-        newNode.next = temp.next;
-        temp.next = newNode;
+        newNode.setNext(temp.getNext());
+        temp.setNext(newNode);
         this.length++;
         return true;
     }
@@ -166,7 +168,7 @@ public class LinkedList {
         Node<String> temp = get(index);
 
         if(Objects.nonNull(temp)) {
-            temp.data = data;
+            temp.setData(data);
             return true;
         }
         return false;
@@ -188,8 +190,8 @@ public class LinkedList {
         Node<String> remove = get(index);
         Node<String> previousNode = get(index -1);
 
-        previousNode.next = get(index +1);
-        remove.next = null;
+        previousNode.setNext(get(index +1));
+        remove.setNext(null);
         this.length--;
 
         return remove;

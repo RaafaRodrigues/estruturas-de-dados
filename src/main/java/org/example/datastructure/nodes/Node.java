@@ -1,4 +1,4 @@
-package org.example.datastructure;
+package org.example.datastructure.nodes;
 
 import lombok.Data;
 

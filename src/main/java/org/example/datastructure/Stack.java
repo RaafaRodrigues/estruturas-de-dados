@@ -1,5 +1,7 @@
 package org.example.datastructure;
 
+import org.example.datastructure.nodes.Node;
+
 public class Stack {
     private Node<Integer> top;
     private int height;
@@ -14,7 +16,7 @@ public class Stack {
         if (this.top == null) {
             System.out.println("Pilha vazia");
         } else {
-            System.out.println("Topo: "+ top.data);
+            System.out.println("Topo: "+ top.getData());
         }
     }
 
@@ -26,8 +28,8 @@ public class Stack {
         System.out.println("#########################");
         Node<Integer> navigator = this.top;
         while (navigator != null) {
-            System.out.println(navigator.data);
-            navigator = navigator.next;
+            System.out.println(navigator.getData());
+            navigator = navigator.getNext();
         }
         System.out.println("#########################");
     }
@@ -37,7 +39,7 @@ public class Stack {
         if (height == 0) {
             this.top = newNode;
         } else {
-            newNode.next = top;
+            newNode.setNext(top);
             top = newNode;
         }
         height++;
@@ -48,8 +50,8 @@ public class Stack {
             return null;
         }
         var temp = this.top;
-        this.top = this.top.next;
-        temp.next = null;
+        this.top = this.top.getNext();
+        temp.setNext(null);
         this.height--;
         return temp;
     }
