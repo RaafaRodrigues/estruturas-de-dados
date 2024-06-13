@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.datastructure.LinkedList;
-import org.example.datastructure.Queue;
-import org.example.datastructure.Stack;
-import org.example.datastructure.Tree;
+import org.example.datastructure.*;
 
 import java.util.Arrays;
 
@@ -62,19 +59,31 @@ public class Main {
 //        queue.getLength();
 //        queue.print();
 
-        Tree tree = new Tree();
-        tree.insert(37);
-        tree.insert(11);
-        tree.insert(66);
+//        Tree tree = new Tree();
+//        tree.insert(37);
+//        tree.insert(11);
+//        tree.insert(66);
+//
+//        tree.insert(8);
+//        tree.insert(17);
+//        tree.insert(42);
+//
+//        tree.insert(72);
+//
+//
+//        tree.breadthFirstSearch();
 
-        tree.insert(8);
-        tree.insert(17);
-        tree.insert(42);
+        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        binarySearchTree.insert(37);
+        binarySearchTree.insert(66);
+        binarySearchTree.insert(42);
+        binarySearchTree.insert(11);
+        binarySearchTree.insert(72);
+        binarySearchTree.insert(8);
+        binarySearchTree.insert(17);
 
-        tree.insert(72);
-
-
-        tree.breadthFirstSearch();
+        binarySearchTree.removerNode(8);
+        binarySearchTree.inOrder();
 
     }
 
