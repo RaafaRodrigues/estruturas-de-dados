@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.datastructure.LinkedList;
+import org.example.datastructure.Queue;
 import org.example.datastructure.Stack;
 
 import java.util.Arrays;
@@ -35,8 +36,31 @@ public class Main {
 //        stack.getHeight();
 //        stack.print();
         
-        int[] numeros = {5,4,3,2,1};
-        inverter(numeros);
+//        int[] numeros = {5,4,3,2,1};
+//        inverter(numeros);
+
+        Queue queue = new Queue(1);
+
+        queue.getFirst();
+        queue.getLast();
+        queue.getLength();
+        queue.print();
+
+        queue.enqueue(2);
+        queue.enqueue(7);
+
+        queue.getFirst();
+        queue.getLast();
+        queue.getLength();
+        queue.print();
+
+        queue.dequeue();
+
+        queue.getFirst();
+        queue.getLast();
+        queue.getLength();
+        queue.print();
+
     }
 
     private static void inverter(final int[] numeros) {
