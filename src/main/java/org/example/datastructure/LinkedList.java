@@ -4,12 +4,12 @@ package org.example.datastructure;
 import java.util.Objects;
 
 public class LinkedList {
-    private Node head;
-    private Node tail;
+    private Node<String> head;
+    private Node<String> tail;
     private int length;
 
     public LinkedList(String data) {
-        Node newNode = new Node(data);
+        Node<String> newNode = new Node<>(data);
         this.head = newNode;
         this.tail = newNode;
         length = 1;
@@ -49,7 +49,7 @@ public class LinkedList {
 
 
     public void print() {
-        Node temp = this.head;
+        Node<String> temp = this.head;
 
         while (temp != null) {
             System.out.println(temp.data);
@@ -58,7 +58,7 @@ public class LinkedList {
     }
 
     public void append(String data){
-        Node newNode = new Node(data);
+        Node<String> newNode = new Node<>(data);
         if(this.length == 0) {
             this.head = newNode;
             this.tail = newNode;
@@ -70,12 +70,12 @@ public class LinkedList {
     }
 
 
-    public Node removeLast() {
+    public Node<String> removeLast() {
         if (this.length == 0) {
             return null;
         }
-        Node navigator = this.head;
-        Node removed;
+        Node<String> navigator = this.head;
+        Node<String> removed;
         while (navigator.next != this.tail) {
             navigator = navigator.next;
         }
@@ -90,7 +90,7 @@ public class LinkedList {
     }
 
     public void prepend(String data) {
-        Node newNode = new Node(data);
+        Node<String> newNode = new Node<>(data);
 
         if (this.length ==0) {
             this.head = newNode;
@@ -102,13 +102,13 @@ public class LinkedList {
         this.length++;
     }
 
-    public Node removeFirst() {
+    public Node<String> removeFirst() {
 
         if(this.length == 0) {
             return null;
         }
 
-        Node removed = this.head;
+        Node<String> removed = this.head;
         this.head = this.head.next;
         removed.next = null;
         this.length--;
@@ -126,11 +126,11 @@ public class LinkedList {
     }
 
 
-    public Node get(int index) {
+    public Node<String> get(int index) {
         if(index < 0 || index >= this.length) {
             return null;
         }
-        Node navigator = this.head;
+        Node<String> navigator = this.head;
 
         for (int i = 0; i < index; i++) {
             navigator = navigator.next;
@@ -154,8 +154,8 @@ public class LinkedList {
             return true;
         }
 
-        Node newNode = new Node(data);
-        Node temp = this.get(index -1);
+        Node<String> newNode = new Node<>(data);
+        Node<String> temp = this.get(index -1);
         newNode.next = temp.next;
         temp.next = newNode;
         this.length++;
@@ -163,7 +163,7 @@ public class LinkedList {
     }
 
     public Boolean set(int index, String data) {
-        Node temp = get(index);
+        Node<String> temp = get(index);
 
         if(Objects.nonNull(temp)) {
             temp.data = data;
@@ -172,7 +172,7 @@ public class LinkedList {
         return false;
     }
 
-    public Node remove(int index) {
+    public Node<String> remove(int index) {
         if (index < 0 || index >= this.length) {
             return null;
         }
@@ -185,8 +185,8 @@ public class LinkedList {
             return removeLast();
         }
 
-        Node remove = get(index);
-        Node previousNode = get(index -1);
+        Node<String> remove = get(index);
+        Node<String> previousNode = get(index -1);
 
         previousNode.next = get(index +1);
         remove.next = null;

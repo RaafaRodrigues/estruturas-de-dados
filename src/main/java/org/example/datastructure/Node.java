@@ -3,11 +3,11 @@ package org.example.datastructure;
 import lombok.Data;
 
 @Data
-public class Node {
+public class Node<T> {
 
-    protected String data;
-    protected Node next;
-    public Node(String data) {
+    protected T data;
+    protected Node<T> next;
+    public Node(T data) {
         this.data = data;
     }
 }

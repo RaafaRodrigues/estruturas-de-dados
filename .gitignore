@@ -36,3 +36,16 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/.idea/.gitignore
+/.idea/sonarlint/issuestore/0/b/0ba1b9c7a4878802f938e331cc2d8a042087ec6b
+/.idea/sonarlint/securityhotspotstore/0/b/0ba1b9c7a4878802f938e331cc2d8a042087ec6b
+/.idea/sonarlint/issuestore/3/c/3c3be120a67ba4bf19e8b6605943848b06771bf6
+/.idea/sonarlint/securityhotspotstore/3/c/3c3be120a67ba4bf19e8b6605943848b06771bf6
+/.idea/sonarlint/issuestore/3/5/35f5d1b9928bbcf650de25e3f116d5a3ea1115d8
+/.idea/sonarlint/securityhotspotstore/3/5/35f5d1b9928bbcf650de25e3f116d5a3ea1115d8
+/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+/.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+/.idea/sonarlint/issuestore/index.pb
+/.idea/sonarlint/securityhotspotstore/index.pb
+/.idea/misc.xml
+/.idea/vcs.xml
